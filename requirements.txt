@@ -3,4 +3,6 @@ httplib2 == 0.11.3
 requests ==2.19.1
 flask_httpauth ==3.2.4
 sqlalchemy ==1.2.12
+sqlalchemy-utils == 0.33.5
+passlib ==1.7.1
 flask == 1.0.2
