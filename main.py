@@ -1,5 +1,5 @@
 from functools import wraps
-from flask import (render_template, request, redirect, jsonify, url_for,
+from flask import (Flask, render_template, request, redirect, jsonify, url_for,
                    flash, make_response)
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import relationship, sessionmaker
