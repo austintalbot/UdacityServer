@@ -1,6 +1,12 @@
 # Server Configuration
 
-## Ssh port number change
+## 1. Start a new Ubuntu Linux server instance on [Amazon Lightsail](https://lightsail.aws.amazon.com/). There are full details on setting up your Lightsail instance on the next page
+
+## 2. Follow the instructions provided to SSH into your server
+
+## 3. Update all currently installed packages
+
+## 4. Ssh port number change
 
 1. `sudo nano /etc/ssh/sshd_config`
 2. find the port = 22
@@ -10,7 +16,7 @@
 6. you will have to log out and back in - this can be done with `shutdown -r now`
 7. Reconnect using the ssh terminal on port 2200
 
-## UFW configuration
+## 5. UFW configuration
 
 1. verify that it is not configured
 2. `sudo ufw status`
@@ -45,7 +51,11 @@ Status: active
 | 80      | tcp (v6) ALLOW  | Anywhere (v6) |
 | 123(v6) | ALLOW           | Anywhere (v6) |
 
-## Generate key for the grader
+## 6. Create a new User
+
+## 7. Give user sudo access
+
+## 8. Generate key for the grader
 
 1. on your local machine terminal
 2. `ssh-keygen`
@@ -66,7 +76,7 @@ Status: active
         2. `sudo chmod 700 /home/grader/.ssh`
     5. login via ssh using the new private key from your local machine
         1. you will be prompted to enter the passphrase created previously
-6. Disable the password logins 
+6. Disable the password login
     1. this will force everyone to login with a key
     2. `sudo nano /etc/ssh/sshd_config`
     3. find `PasswordAuthentication yes`
@@ -75,7 +85,11 @@ Status: active
     6. restart the service to apply the changes
         1. `sudo service sshd restart`
 
-## set timezone to UTC
+## 9. Set timezone to UTC
 
-1.  `sudo timedatectl set-timezone UTC`
-2.  `timedatectl`
+1. `sudo timedatectl set-timezone UTC`
+2. `timedatectl`
+
+## 10. Install and configure apache and Python mod_wsgi application
+
+## 11. Install and configure PostgreSQL
