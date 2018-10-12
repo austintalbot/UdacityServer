@@ -91,5 +91,5 @@ class CategoryItem(Base):
         }
 
 
-engine = create_engine('sqlite:///Catalog.db')
+engine = create_engine('postgresql://Catalog.db')
 Base.metadata.create_all(engine)
