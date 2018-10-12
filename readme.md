@@ -77,12 +77,14 @@ Status: active
 
 ## 6. Create a new User
 
-1. `sudo adduser Grader`
-2. enter password - Grader
-3. update full name when prompted to be: Udacity Grader
-4. Confirm user was created buy using `finger Grader`
+1. `sudo adduser grader`
+2. Update full name when prompted to be: Udacity Grader
+3. Confirm user was created buy using `finger grader`
 
 ## 7. Give user sudo access
+
+2. `sudo cp /home/myapp/UdacityServer/graderSudoers /etc/sudoers.d/graderSudoers`
+3. `sudo cat /etc/sudoers.d/gradersudoers`
 
 ## 8. Generate key for the grader
 
