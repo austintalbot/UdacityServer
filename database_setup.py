@@ -90,6 +90,6 @@ class CategoryItem(Base):
             'user_id': self.user_id
         }
 
-
-engine = create_engine('postgresql://Catalog')
+# postgresql://scott:tiger@localhost:5432/mydatabase
+engine = create_engine('postgresql://myapp:@localhost:5432/Catalog')
 Base.metadata.create_all(engine)
