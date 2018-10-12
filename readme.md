@@ -1,10 +1,34 @@
 # Server Configuration
 
+-> Austin Talbot
+
+- [Server Configuration](#server-configuration)
+  - [1. Start a new Ubuntu Linux server instance on Amazon Lightsail. There are full details on setting up your Lightsail instance on the next page](#1-start-a-new-ubuntu-linux-server-instance-on-amazon-lightsail-there-are-full-details-on-setting-up-your-lightsail-instance-on-the-next-page)
+  - [2. Follow the instructions provided to SSH into your server](#2-follow-the-instructions-provided-to-ssh-into-your-server)
+  - [3. Update all currently installed packages](#3-update-all-currently-installed-packages)
+  - [4. Ssh port number change](#4-ssh-port-number-change)
+  - [5. UFW configuration](#5-ufw-configuration)
+  - [6. Create a new User](#6-create-a-new-user)
+  - [7. Give user sudo access](#7-give-user-sudo-access)
+  - [8. Generate key for the grader](#8-generate-key-for-the-grader)
+  - [9. Set timezone to UTC](#9-set-timezone-to-utc)
+  - [10. Install and configure apache and Python mod_wsgi application](#10-install-and-configure-apache-and-python-mod_wsgi-application)
+  - [11. Install and configure PostgreSQL](#11-install-and-configure-postgresql)
+    - [References used](#references-used)
+
 ## 1. Start a new Ubuntu Linux server instance on [Amazon Lightsail](https://lightsail.aws.amazon.com/). There are full details on setting up your Lightsail instance on the next page
 
 ## 2. Follow the instructions provided to SSH into your server
 
 ## 3. Update all currently installed packages
+
+1. `sudo apt-get update`
+2. `sudo apt-get upgrade`
+3. Do you want to continue? [Y/n] `y`
+4. If any dialogs pop up, keep the current configuration
+5. `sudo apt-get dist-upgrade`
+6. Do you want to continue? [Y/n] `y`
+7. `do-release-upgrade -f DistUpgradeViewNonInteractive`
 
 ## 4. Ssh port number change
 
@@ -53,6 +77,11 @@ Status: active
 
 ## 6. Create a new User
 
+1. `sudo adduser Grader`
+2. enter password - Grader
+3. update full name when prompted to be: Udacity Grader
+4. Confirm user was created buy using `finger Grader`
+
 ## 7. Give user sudo access
 
 ## 8. Generate key for the grader
@@ -93,3 +122,7 @@ Status: active
 ## 10. Install and configure apache and Python mod_wsgi application
 
 ## 11. Install and configure PostgreSQL
+
+### References used
+
+1. Python WSGI setup - [Karvinen, Tero. “Write Python 3 Web Apps with Apache2 mod_wsgi – Install Ubuntu 16.04 Xenial – Every Tiny Part Tested Separately.” Write Python 3 Web Apps with Apache2 mod_wsgi – Install Ubuntu 16.04 Xenial – Every Tiny Part Tested Separately | Tero Karvinen, 12 Feb. 2017, terokarvinen.com/2017/write-python-3-web-apps-with-apache2-mod_wsgi-install-ubuntu-16-04-xenial-every-tiny-part-tested-separately.](http://terokarvinen.com/2017/write-python-3-web-apps-with-apache2-mod_wsgi-install-ubuntu-16-04-xenial-every-tiny-part-tested-separately)
