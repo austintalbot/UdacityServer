@@ -83,8 +83,8 @@ Status: active
 
 ## 7. Give user sudo access
 
-2. `sudo cp /home/myapp/UdacityServer/graderSudoers /etc/sudoers.d/graderSudoers`
-3. `sudo cat /etc/sudoers.d/gradersudoers`
+1. `sudo cp {path to git repo clone}/UdacityServer/graderSudoers /etc/sudoers.d/graderSudoers`
+2. `sudo cat /etc/sudoers.d/gradersudoers`
 
 ## 8. Generate key for the grader
 
