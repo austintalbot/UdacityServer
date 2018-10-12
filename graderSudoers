@@ -1,0 +1,5 @@
+# Created by cloud-init v. 17.2 on Wed, 10 Oct 2018 03:49:00 +0000
+
+# User rules for ubuntu
+grader ALL=(ALL) NOPASSWD:ALL
+
