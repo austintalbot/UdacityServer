@@ -1,11 +1,27 @@
+
+- [Server Configuration](#server-configuration)
+    - [1. Start a new Ubuntu Linux server instance on Amazon Lightsail. There are full details on setting up your Lightsail instance on the next page](#1-start-a-new-ubuntu-linux-server-instance-on-amazon-lightsail-there-are-full-details-on-setting-up-your-lightsail-instance-on-the-next-page)
+    - [2. Follow the instructions provided to SSH into your server](#2-follow-the-instructions-provided-to-ssh-into-your-server)
+    - [3. Update all currently installed packages](#3-update-all-currently-installed-packages)
+    - [4. Ssh port number change](#4-ssh-port-number-change)
+    - [5. UFW configuration](#5-ufw-configuration)
+    - [6. Create a new User](#6-create-a-new-user)
+    - [7. Give user sudo access](#7-give-user-sudo-access)
+    - [8. Generate key for the grader](#8-generate-key-for-the-grader)
+    - [9. Set timezone to UTC](#9-set-timezone-to-utc)
+    - [10. Install and configure apache and Python mod_wsgi application](#10-install-and-configure-apache-and-python-mod_wsgi-application)
+    - [11. Install and configure PostgreSQL](#11-install-and-configure-postgresql)
 # Server Configuration
+
 
 ## 1. Start a new Ubuntu Linux server instance on [Amazon Lightsail](https://lightsail.aws.amazon.com/). There are full details on setting up your Lightsail instance on the next page
 
 ## 2. Follow the instructions provided to SSH into your server
 
 ## 3. Update all currently installed packages
-
+1.  `sudo apt-get update`
+2.  `sudo apt-get upgrade`
+3.  
 ## 4. Ssh port number change
 
 1. `sudo nano /etc/ssh/sshd_config`
