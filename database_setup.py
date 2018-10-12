@@ -92,5 +92,6 @@ class CategoryItem(Base):
 
 
 # postgresql://scott:tiger@localhost:5432/mydatabase
-engine = create_engine('postgresql://myapp:myapp@localhost:5432/Catalog')
+engine = create_engine(
+    'postgresql+psycopg2://postgres:none@localhost:5432/Catalog')
 Base.metadata.create_all(engine)

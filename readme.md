@@ -125,6 +125,9 @@ Status: active
 
 ## 11. Install and configure PostgreSQL
 
+1. `sudo apt-get install postgresql postgresql-contrib -y`
+2. `sudo -i -u postgres`
+
 ### References used
 
 1. Python WSGI setup - [Karvinen, Tero. “Write Python 3 Web Apps with Apache2 mod_wsgi – Install Ubuntu 16.04 Xenial – Every Tiny Part Tested Separately.” Write Python 3 Web Apps with Apache2 mod_wsgi – Install Ubuntu 16.04 Xenial – Every Tiny Part Tested Separately | Tero Karvinen, 12 Feb. 2017, terokarvinen.com/2017/write-python-3-web-apps-with-apache2-mod_wsgi-install-ubuntu-16-04-xenial-every-tiny-part-tested-separately.](http://terokarvinen.com/2017/write-python-3-web-apps-with-apache2-mod_wsgi-install-ubuntu-16-04-xenial-every-tiny-part-tested-separately)
