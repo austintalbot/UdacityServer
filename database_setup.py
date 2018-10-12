@@ -91,5 +91,5 @@ class CategoryItem(Base):
         }
 
 
-engine = create_engine('postgresql://Catalog.db')
+engine = create_engine('postgresql://Catalog')
 Base.metadata.create_all(engine)
