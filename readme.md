@@ -2,9 +2,13 @@
 
 -> Austin Talbot
 
+
+
+
 - [Server Configuration](#server-configuration)
   - [1. Start a new Ubuntu Linux server instance on Amazon Lightsail. There are full details on setting up your Lightsail instance on the next page](#1-start-a-new-ubuntu-linux-server-instance-on-amazon-lightsail-there-are-full-details-on-setting-up-your-lightsail-instance-on-the-next-page)
   - [2. Follow the instructions provided to SSH into your server](#2-follow-the-instructions-provided-to-ssh-into-your-server)
+    - [server information](#server-information)
   - [3. Update all currently installed packages](#3-update-all-currently-installed-packages)
   - [4. Ssh port number change](#4-ssh-port-number-change)
   - [5. UFW configuration](#5-ufw-configuration)
@@ -21,6 +25,12 @@
 
 ## 2. Follow the instructions provided to SSH into your server
 
+### server information
+
+* url: [complete URL to hosted web application](http://udacity.austintalbot.com/)
+* IP:54.218.168.134
+* ssh port: 2200
+
 ## 3. Update all currently installed packages
 
 1. `sudo apt-get update`
@@ -36,10 +46,12 @@
 1. `sudo nano /etc/ssh/sshd_config`
 2. find the port = 22
 3. change `port = 22 -> port = 2200`
-4. save /etc/ssh/sshd_config
-5. `sudo service sshd restart`
-6. you will have to log out and back in - this can be done with `shutdown -r now`
-7. Reconnect using the ssh terminal on port 2200
+4. find PermitRootLogin = Prohibit-password
+5. change `PermitRootLogin = Prohibit-password -> PermitRootLogin = no`
+6. save /etc/ssh/sshd_config
+7. `sudo service sshd restart`
+8. you will have to log out and back in - this can be done with `shutdown -r now`
+9. Reconnect using the ssh terminal on port 2200
 
 ## 5. UFW configuration
 
@@ -129,15 +141,13 @@ Status: active
 2. `virtualenv -p python3 env`
 3. `source env/bin/activate`
 4. `pip3 install -r requirements.txt`
-5. 
-6. `sudo apt-get -y install apache2`
-7. `sudo apt-get install libapache2-mod-wsgi-py3`
-8. `sudo cp /home/myapp/UdacityServer/myapp.conf  /etc/apache2/sites-available/`
-9. `sudo cp {path to git repo clone}/UdacityServer/myapp.conf  /etc/apache2/sites-available/`
-10. `sudo a2ensite myapp.conf`
-11. `apache2ctl configtest`
-12. `sudo service apache2 restart`
-13. 
+5. `sudo apt-get -y install apache2`
+6. `sudo apt-get install libapache2-mod-wsgi-py3`
+7. `sudo cp /home/myapp/UdacityServer/myapp.conf  /etc/apache2/sites-available/`
+8. `sudo cp {path to git repo clone}/UdacityServer/myapp.conf  /etc/apache2/sites-available/`
+9. `sudo a2ensite myapp.conf`
+10. `apache2ctl configtest`
+11. `sudo service apache2 restart`
 
 ## 11. Install and configure PostgreSQL
 
