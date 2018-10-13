@@ -19,18 +19,20 @@ from OpenSSL import SSL
 
 app = Flask(__name__)
 
-# read client secrets from google
-CLIENT_ID = json.loads(open('./static/client_secrets.json',
-                            'r').read())['web']['client_id']
+
 auth = HTTPBasicAuth()
 APPLICATION_NAME = "Austin Talbot - Catalog APP"
 
 # Connect to Database and create database session
+
 engine = create_engine(
-    'sqlite:///Catalog.db', connect_args={'check_same_thread': False})
+    'postgresql+psycopg2://postgres:none@localhost:5432/Catalog')
 auth = HTTPBasicAuth()
 APPLICATION_NAME = "Austin Talbot - Catalog APP"
 
+# read client secrets from google
+CLIENT_ID = json.loads(open('./static/client_secrets.json',
+                            'r').read())['web']['client_id']
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
@@ -630,4 +632,5 @@ if __name__ == '__main__':
         random.choice(string.ascii_uppercase + string.digits)
         for x in list(range(32)))
     app.debug = True
-    app.run(host='0.0.0.0', port=8000, ssl_context=('./static/cert.pem','./static/key.pem'))
+    app.run(host='0.0.0.0', port=8000, ssl_context=(
+        './static/cert.pem', './static/key.pem'))

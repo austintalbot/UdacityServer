@@ -126,7 +126,7 @@ Status: active
 ## 10. Install and configure apache and Python mod_wsgi application
 
 1. `sudo apt-get install python3-venv -y`
-2. `sudo python3 -m venv /home/myapp/UdacityServer/ env`
+2. `virtualenv -p python3 env`
 3. `source env/bin/activate`
 4. `pip3 install -r requirements.txt`
 5. 
