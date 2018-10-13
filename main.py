@@ -630,5 +630,4 @@ if __name__ == '__main__':
         random.choice(string.ascii_uppercase + string.digits)
         for x in list(range(32)))
     app.debug = True
-    app.run(host='0.0.0.0', port=8000, ssl_context=(
-        url_for('./static/cert.pem'), url_for('./static/key.pem')))
+    app.run(host='0.0.0.0', port=8000, ssl_context=('./static/cert.pem','./static/key.pem'))
