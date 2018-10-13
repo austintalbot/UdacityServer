@@ -33,8 +33,7 @@ print('database connected')
 user1 = User(
     name="Austin Talbot",
     email="austintalbot@gmail.com",
-    picture="""https://lh5.googleusercontent.com/
-    -E-fRbWcd9eI/AAAAAAAAAAI/AAAAAAAABbE/IdjWqud_cWo/photo.jpg"""
+    picture="""https://scontent.xx.fbcdn.net/v/t1.0-1/p100x100/15285089_10153841678546685_94009395283824576_n.jpg?_nc_cat=107&oh=7740995f119567ca1c06be0243939797&oe=5C41F878"""
 )
 session.add(user1)
 session.commit()
