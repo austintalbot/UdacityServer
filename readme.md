@@ -84,8 +84,9 @@ Status: active
 
 ## 7. Give user sudo access
 
-1. `sudo cp {path to git repo clone}/UdacityServer/graderSudoers /etc/sudoers.d/graderSudoers`
-2. `sudo cat /etc/sudoers.d/gradersudoers`
+1. `sudo cp /home/myapp/UdacityServer/graderSudoers /etc/sudoers.d/graderSudoers`
+2. `sudo cp {path to git repo clone}/UdacityServer/graderSudoers /etc/sudoers.d/graderSudoers`
+3. `sudo cat /etc/sudoers.d/gradersudoers`
 
 ## 8. Generate key for the grader
 
@@ -123,6 +124,14 @@ Status: active
 2. `timedatectl`
 
 ## 10. Install and configure apache and Python mod_wsgi application
+
+1. `sudo apt-get -y install apache2`
+2. `sudo apt-get install libapache2-mod-wsgi-py3`
+3. `sudo cp /home/myapp/UdacityServer/myapp.conf  /etc/apache2/sites-available/`
+4. `sudo cp {path to git repo clone}/UdacityServer/myapp.conf  /etc/apache2/sites-available/`
+5. `sudo a2ensite myapp.conf`
+6. `apache2ctl configtest`
+7. `sudo service apache2 restart`
 
 ## 11. Install and configure PostgreSQL
 
