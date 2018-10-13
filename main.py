@@ -375,10 +375,10 @@ def login():
 # Connect FB login
 @app.route('/fbconnect', methods=['POST'])
 def fbconnect():
-    if request.args.get('state') != login_session['state']:
-        response = make_response(json.dumps('Invalid state parameter.'), 401)
-        response.headers['Content-Type'] = 'application/json'
-        return response
+    # if request.args.get('state') != login_session['state']:
+    #     response = make_response(json.dumps('Invalid state parameter.'), 401)
+    #     response.headers['Content-Type'] = 'application/json'
+    #     return response
     # Gets acces token
     access_token = request.data
     print("access token received %s " % access_token)
