@@ -125,13 +125,19 @@ Status: active
 
 ## 10. Install and configure apache and Python mod_wsgi application
 
-1. `sudo apt-get -y install apache2`
-2. `sudo apt-get install libapache2-mod-wsgi-py3`
-3. `sudo cp /home/myapp/UdacityServer/myapp.conf  /etc/apache2/sites-available/`
-4. `sudo cp {path to git repo clone}/UdacityServer/myapp.conf  /etc/apache2/sites-available/`
-5. `sudo a2ensite myapp.conf`
-6. `apache2ctl configtest`
-7. `sudo service apache2 restart`
+1. `sudo apt-get install python3-venv -y`
+2. `sudo python3 -m venv /home/myapp/UdacityServer/ env`
+3. `source env/bin/activate`
+4. `pip3 install -r requirements.txt`
+5. 
+6. `sudo apt-get -y install apache2`
+7. `sudo apt-get install libapache2-mod-wsgi-py3`
+8. `sudo cp /home/myapp/UdacityServer/myapp.conf  /etc/apache2/sites-available/`
+9. `sudo cp {path to git repo clone}/UdacityServer/myapp.conf  /etc/apache2/sites-available/`
+10. `sudo a2ensite myapp.conf`
+11. `apache2ctl configtest`
+12. `sudo service apache2 restart`
+13. 
 
 ## 11. Install and configure PostgreSQL
 
