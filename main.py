@@ -19,20 +19,19 @@ from OpenSSL import SSL
 
 app = Flask(__name__)
 
+# read client secrets from google
+CLIENT_ID = json.loads(open('./static/client_secrets.json',
+                            'r').read())['web']['client_id']
 
 auth = HTTPBasicAuth()
 APPLICATION_NAME = "Austin Talbot - Catalog APP"
 
 # Connect to Database and create database session
-
 engine = create_engine(
     'postgresql+psycopg2://postgres:none@localhost:5432/Catalog')
-auth = HTTPBasicAuth()
 APPLICATION_NAME = "Austin Talbot - Catalog APP"
 
-# read client secrets from google
-CLIENT_ID = json.loads(open('./static/client_secrets.json',
-                            'r').read())['web']['client_id']
+
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
