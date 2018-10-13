@@ -15,6 +15,7 @@ import httplib2
 import requests
 from flask_httpauth import HTTPBasicAuth
 from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
+from OpenSSL import SSL
 
 app = Flask(__name__)
 
@@ -624,8 +625,10 @@ def disconnect():
 
 
 if __name__ == '__main__':
+
     app.config['SECRET_KEY'] = ''.join(
         random.choice(string.ascii_uppercase + string.digits)
         for x in list(range(32)))
     app.debug = True
-    app.run('cert.pem', 'key.pem', host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=8000, ssl_context=(
+        url_for('./static/cert.pem'), url_for('./static/key.pem')))
