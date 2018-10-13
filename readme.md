@@ -15,6 +15,7 @@
   - [10. Install and configure apache and Python mod_wsgi application](#10-install-and-configure-apache-and-python-mod_wsgi-application)
   - [11. Install and configure PostgreSQL](#11-install-and-configure-postgresql)
     - [References used](#references-used)
+  - [Useful commands](#useful-commands)
 
 ## 1. Start a new Ubuntu Linux server instance on [Amazon Lightsail](https://lightsail.aws.amazon.com/). There are full details on setting up your Lightsail instance on the next page
 
@@ -131,3 +132,7 @@ Status: active
 ### References used
 
 1. Python WSGI setup - [Karvinen, Tero. “Write Python 3 Web Apps with Apache2 mod_wsgi – Install Ubuntu 16.04 Xenial – Every Tiny Part Tested Separately.” Write Python 3 Web Apps with Apache2 mod_wsgi – Install Ubuntu 16.04 Xenial – Every Tiny Part Tested Separately | Tero Karvinen, 12 Feb. 2017, terokarvinen.com/2017/write-python-3-web-apps-with-apache2-mod_wsgi-install-ubuntu-16-04-xenial-every-tiny-part-tested-separately.](http://terokarvinen.com/2017/write-python-3-web-apps-with-apache2-mod_wsgi-install-ubuntu-16-04-xenial-every-tiny-part-tested-separately)
+
+## Useful commands
+
+1. `sudo tail -f /var/log/apache2/error.log`

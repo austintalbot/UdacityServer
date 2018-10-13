@@ -628,4 +628,4 @@ if __name__ == '__main__':
         random.choice(string.ascii_uppercase + string.digits)
         for x in list(range(32)))
     app.debug = True
-    app.run(host='0.0.0.0', port=8000)
+    app.run('cert.pem', 'key.pem', host='0.0.0.0', port=8000)
