@@ -6,14 +6,15 @@ from database_setup import Category, CategoryItem, User, Base
 engine = create_engine(
     'postgresql+psycopg2://postgres:none@localhost:5432/Catalog')
 APPLICATION_NAME = "Austin Talbot - Catalog APP"
+Base.metadata.drop_all(engine)
+Base.metadata.create_all(engine)
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 print('database connected')
 
 # # Clear database
-Base.metadata.drop_all(engine)
-Base.metadata.create_all(engine)
+
 # # Bind the engine to the metadata of the Base class so that the
 # # declaratives can be accessed through a DBSession instance
 
