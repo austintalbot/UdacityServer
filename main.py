@@ -20,7 +20,7 @@ from OpenSSL import SSL
 app = Flask(__name__)
 
 # read client secrets from google
-CLIENT_ID = json.loads(open('./static/client_secrets.json',
+CLIENT_ID = json.loads(open('/home/myapp/UdacityServer/static/client_secrets.json',
                             'r').read())['web']['client_id']
 
 auth = HTTPBasicAuth()
@@ -30,10 +30,7 @@ APPLICATION_NAME = "Austin Talbot - Catalog APP"
 engine = create_engine(
     'postgresql+psycopg2://postgres:none@localhost:5432/Catalog')
 APPLICATION_NAME = "Austin Talbot - Catalog APP"
-
-
 Base.metadata.bind = engine
-
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
