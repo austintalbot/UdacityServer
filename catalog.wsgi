@@ -6,3 +6,5 @@ with open(activate_this) as file_:
 sys.path.insert(0, "/home/myapp/UdacityServer")
 
 from main import app as application
+application.secret_key = ''.join(random.choice(
+        string.ascii_uppercase + string.digits)for x in list(range(32)))
