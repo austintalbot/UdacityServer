@@ -387,7 +387,7 @@ def fbconnect():
     # Gets info from fb clients secrets
     app_id = json.loads(open('./static/facebook_secret.json',
                              'r').read())['web']['app_id']
-    app_secret = json.loads(open('./static/facebook_secret.json',
+    app_secret = json.loads(open('/home/myapp/UdacityServer/static/facebook_secret.json',
                                  'r').read())['web']['app_secret']
 
     url = """https://graph.facebook.com/v3.1/oauth/
